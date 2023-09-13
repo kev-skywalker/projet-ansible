@@ -24,11 +24,11 @@
     dest: /usr/local/bin/docker-compose
     mode: 0755
 
-- name: Enable and Start docker
-  service:
-    name: docker
-    state: started
-    enabled: yes
+- name: add user remote to docker group
+  user:
+    name: vagrant
+    groups: docker
+    append: yes
 
 - name: docker python
   pip:
