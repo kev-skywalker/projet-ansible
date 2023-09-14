@@ -26,7 +26,7 @@
 
 - name: add user remote to docker group
   user:
-    name: vagrant
+    name: "{{ ansible_hostname }}"
     groups: docker
     append: yes
 
